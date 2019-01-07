@@ -1,0 +1,46 @@
+<div class="main__section">
+
+ <form [formGroup]="myForm" (submit)="crear()">
+    <mat-form-field >
+        <input matInput type="text"  formControlName="nombre"  placeholder="Nombre" [(ngModel)]="currentuser.nombre">
+    </mat-form-field>
+
+    <mat-form-field >
+        <input matInput type="text"  formControlName="apellido"  placeholder="Apellido" [(ngModel)]="currentuser.apellido">
+    </mat-form-field>
+
+    <mat-form-field >
+        <input matInput type="text"  formControlName="edad"  placeholder="Edad" [(ngModel)]="currentuser.edad">
+    </mat-form-field>
+
+    <div>
+            <button mat-button type="submit"> Crear </button>
+            <button mat-button (click)="borrar()"> Borrar </button>
+            <button mat-button (click)="actualizar()"> Actualizar </button>
+    </div>
+
+ </form>
+
+   
+
+
+    
+<mat-card>
+        <button
+            mat-raised-button
+            [matTooltip]="selectedItem.nombre"
+            *ngFor="let selectedItem of usersCreated"
+            (click)="seleccionarUsuario(selectedItem)">
+            {{ selectedItem.nombre}}
+        </button>
+ </mat-card>
+
+<hr>
+
+<h1 colorDirective class="unh1" > Cambiar Color </h1>
+
+
+
+
+
+</div>
